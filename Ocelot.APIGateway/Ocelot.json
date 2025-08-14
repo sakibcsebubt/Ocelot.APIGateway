@@ -1,0 +1,83 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/partners/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/partners/{everything}",
+      "UpstreamHttpMethod": [],
+      "SwaggerKey": "partners"
+    },
+    {
+      "DownstreamPathTemplate": "/api/partners",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/partners",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "partners"
+    },
+    {
+      "DownstreamPathTemplate": "/WeatherForecast/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/weatherforecast/{everything}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "weather"
+    },
+    {
+      "DownstreamPathTemplate": "/WeatherForecast",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/weatherforecast",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "weather"
+    }
+  ],
+
+  "SwaggerEndPoints": [
+    {
+      "Key": "partners",
+      "Config": [
+        {
+          "Name": "PartnerService",
+          "Version": "v1",
+          "Url": "http://localhost:5002/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "weather",
+      "Config": [
+        {
+          "Name": "WeatherService",
+          "Version": "v1",
+          "Url": "http://localhost:5001/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:7000"
+  }
+}
