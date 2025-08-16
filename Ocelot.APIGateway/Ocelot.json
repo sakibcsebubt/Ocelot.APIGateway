@@ -19,8 +19,8 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5002
-        }
+          "Port": 5002e
+        }W
       ],
       "UpstreamPathTemplate": "/partners",
       "UpstreamHttpMethod": [ "GET" ],
