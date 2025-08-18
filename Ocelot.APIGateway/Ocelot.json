@@ -7,7 +7,7 @@
         {
           "Host": "localhost",
           "Port": 5002
-        }ll
+        }
       ],
       "UpstreamPathTemplate": "/partners/{everything}",
       "UpstreamHttpMethod": [],
