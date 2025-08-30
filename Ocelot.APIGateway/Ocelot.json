@@ -37,7 +37,7 @@
       ],
       "UpstreamPathTemplate": "/weatherforecast/{everything}",
       "UpstreamHttpMethod": [ "GET" ],
-      "SwaggerKey": "weather" "HttpHandlerOptions": {}
+      "SwaggerKey": "weather"
     },
     {
       "DownstreamPathTemplate": "/WeatherForecast",
