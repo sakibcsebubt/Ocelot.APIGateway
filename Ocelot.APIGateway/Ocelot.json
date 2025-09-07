@@ -11,7 +11,10 @@
       ],
       "UpstreamPathTemplate": "/partners/{everything}",
       "UpstreamHttpMethod": [],
-      "SwaggerKey": "partners"
+      "SwaggerKey": "partners",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
     },
     {
       "DownstreamPathTemplate": "/api/partners",
@@ -24,10 +27,13 @@
       ],
       "UpstreamPathTemplate": "/partners",
       "UpstreamHttpMethod": [ "GET" ],
-      "SwaggerKey": "partners"
+      "SwaggerKey": "partners",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
     },
     {
-      "DownstreamPathTemplate": "/WeatherForecast/{everything}",
+      "DownstreamPathTemplate": "/PaymentGateway/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -35,12 +41,15 @@
           "Port": 5001
         }
       ],
-      "UpstreamPathTemplate": "/weatherforecast/{everything}",
+      "UpstreamPathTemplate": "/PaymentGateway/{everything}",
       "UpstreamHttpMethod": [ "GET" ],
-      "SwaggerKey": "weather"
+      "SwaggerKey": "weather",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
     },
     {
-      "DownstreamPathTemplate": "/WeatherForecast",
+      "DownstreamPathTemplate": "/PaymentGateway",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -48,9 +57,12 @@
           "Port": 5001
         }
       ],
-      "UpstreamPathTemplate": "/weatherforecast",
+      "UpstreamPathTemplate": "/PaymentGateway",
       "UpstreamHttpMethod": [ "GET" ],
-      "SwaggerKey": "weather"
+      "SwaggerKey": "weather",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
     }
   ],
 
@@ -66,10 +78,10 @@
       ]
     },
     {
-      "Key": "weather",
+      "Key": "PaymentGateway",
       "Config": [
         {
-          "Name": "WeatherService",
+          "Name": "PaymentGateway",
           "Version": "v1",
           "Url": "http://localhost:5001/swagger/v1/swagger.json"
         }

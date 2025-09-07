@@ -1,4 +1,5 @@
 // Program.cs (ApiGateway)
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 // SwaggerForOcelot namespaces:
@@ -6,6 +7,18 @@ using Ocelot.Middleware;
 //using MMLib.SwaggerForOcelot.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
+// Add JWT Bearer Authentication
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        // Your Identity Provider URL
+        options.Authority = "http://localhost:5002"; // Your Partner Service URL or Authorization Server URL
+        options.Audience = "your-api-audience"; // Your Gateway API audience
+        options.RequireHttpsMetadata = false; // Set to true in production
+        options.SaveToken = true;
+    });
+
+
 
 // Ocelot + SwaggerForOcelot read the same config file
 builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
